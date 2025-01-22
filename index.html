@@ -1,59 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Subdomain Takeover Test</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f5f5f5;
-            color: #333;
-            padding: 50px;
-        }
-        h1 {
-            color: #d9534f;
-        }
-        p {
-            font-size: 1.2em;
-        }
-        .result {
-            font-weight: bold;
-            margin-top: 20px;
-        }
-    </style>
-</head>
-<body>
-    <h1>Subdomain Takeover Test</h1>
-    <p>This page is designed to help identify potential risks for subdomain takeover.</p>
-    <p>If you are seeing this message, it may indicate a risk of subdomain takeover for the domain.</p>
-    <p>Please verify the DNS settings for this domain/subdomain and ensure that it is pointing to an active service.</p>
+<html>
+  <head>
+    <title>My Dynamic Site on GitHub Pages</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <h1>Welcome to My Dynamic Site</h1>
+    <p>This content is served via GitHub Pages.</p>
 
-    <div class="result">
-        <p>Status: <span id="status">Check Pending</span></p>
-    </div>
+    <p>Data from our Render API:</p>
+    <div id="dynamic-content">Loading data...</div>
 
-    <script>
-        function checkSubdomainTakeover() {
-            // This is a simplified logic. In real scenarios, you need to check if DNS is pointing to an inactive service.
-            fetch(window.location.href)
-                .then(response => {
-                    if (response.status === 404 || response.status === 403) {
-                        document.getElementById('status').innerText = 'Potential Risk of Subdomain Takeover';
-                        document.getElementById('status').style.color = '#d9534f';
-                    } else {
-                        document.getElementById('status').innerText = 'No Risk Detected';
-                        document.getElementById('status').style.color = '#5cb85c';
-                    }
-                })
-                .catch(error => {
-                    document.getElementById('status').innerText = 'Error Checking Domain';
-                    document.getElementById('status').style.color = '#f0ad4e';
-                });
-        }
-
-        window.onload = checkSubdomainTakeover;
-    </script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
