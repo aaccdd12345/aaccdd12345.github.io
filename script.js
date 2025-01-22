@@ -1,7 +1,7 @@
 async function getApiData() {
   try {
     // Use your actual Render API URL here:
-    const response = await fetch('https://my-render-api.onrender.com/api');
+    const response = await fetch('https://node-api-6nph.onrender.com/api');
     const data = await response.json();
 
     // Update the DOM
